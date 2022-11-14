@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class OrderedAbilities {
-
     public void printArray(int[] array){
         System.out.println(Arrays.toString(array));
     }
@@ -27,5 +26,10 @@ public class OrderedAbilities {
         }
         System.out.println("I can't find your item in array: " + itemToFind);
         return null;
+    }
+
+    // Task 2
+    public Integer getTwoThirdsOf(int[] array){
+        return 0;
     }
 }

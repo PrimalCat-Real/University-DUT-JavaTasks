@@ -1,7 +1,9 @@
 import java.util.Arrays;
 
-public class ArrayOrdered() extends OrderedAbilities {
+public class ArrayOrdered extends OrderedAbilities {
     private int[] array;
+    private static boolean isAllowDuplicates = true;
+
     public int[] getArray() {
         return array;
     }
@@ -10,6 +12,13 @@ public class ArrayOrdered() extends OrderedAbilities {
         this.array = new int[len];
     }
 
+    /** Task 1
+     * Make switch between saving duplicates
+     * **/
+    public ArrayOrdered(int len, boolean isAllowDuplicates) {
+        this.array = new int[len];
+        this.isAllowDuplicates = isAllowDuplicates;
+    }
     // fill an array with numbers 1-10
     public void generateArray(){
         for (int i = 0; i < array.length; i++) {
@@ -33,9 +42,19 @@ public class ArrayOrdered() extends OrderedAbilities {
         return copiedArray;
     }
 
+    // Task 1
+    public int[] insertValue(int valueToInsert){
+        if(!isAllowDuplicates && bSearch(valueToInsert, array) == null){
+            insert(valueToInsert);
+        }else if(isAllowDuplicates){
+            insert(valueToInsert);
+        }
+        return array;
+    }
+
     // place value in array and save order
-    public static String insert(int valueToInsert,int[] arr){
-        int[] copiedArray = Arrays.copyOf(arr, arr.length+1);
+    private int[] insert(int valueToInsert){
+        int[] copiedArray = Arrays.copyOf(array, array.length+1);
         int i;
         for(i=0; i < copiedArray.length-1; i++){
             if(copiedArray[i] > valueToInsert){
@@ -46,6 +65,9 @@ public class ArrayOrdered() extends OrderedAbilities {
             copiedArray[k+1] = copiedArray[k];
         }
         copiedArray[i] = valueToInsert;
-        return Arrays.toString(copiedArray);
+        this.array = copiedArray;
+        return copiedArray;
     }
+
+
 }
