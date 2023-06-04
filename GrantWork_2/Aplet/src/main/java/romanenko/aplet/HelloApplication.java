@@ -136,9 +136,9 @@ public class HelloApplication extends Application {
 
     private void fillNodeStackInorder(NodeItem node) {
         if (node != null) {
-            fillNodeStackInorder(node.getRight()); // Traverse left subtree recursively
+            fillNodeStackInorder(node.getRight()); // Traverse right subtree recursively
             nodeStack.push(node); // Add the current node to the stack
-            fillNodeStackInorder(node.getLeft()); // Traverse right subtree recursively
+            fillNodeStackInorder(node.getLeft()); // Traverse left subtree recursively
         }
     }
 
