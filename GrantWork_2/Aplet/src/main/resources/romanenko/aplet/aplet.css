@@ -1,0 +1,26 @@
+.sidemenu{
+    -fx-background-color: #F4F4F4;
+}
+.appBackground{
+    -fx-background-color: #F4F4F4;
+}
+
+.actionPanel{
+    -fx-background-color: #DDDDDD;
+}
+
+.menuButton {
+    -fx-background-color: transparent;
+}
+
+.menuButton:hover {
+    -fx-background-color: #D2D2D2;
+}
+
+.menuButton .svg-path {
+    -fx-fill: #5e5e5e;
+}
+
+.menuButton:hover .svg-path {
+    -fx-fill: #DDDDDD;
+}
