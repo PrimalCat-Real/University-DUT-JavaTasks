@@ -68,7 +68,7 @@ public class HelloApplication extends Application {
             goInorderBtn.setDisable(true);
             Paint defaultTextFill = goInorderBtn.getTextFill();
             goInorderBtn.setTextFill(Color.GRAY);
-            displayTraversalText.setText(displayTraversalText.getText() + "[inorder]");
+            displayTraversalText.setText("Tree traversal [inorder]");
             nodeStack.clear(); // Clear the stack before starting the traversal
             fillNodeStackInorder(binaryTree.getRoot()); // Fill the nodeStack with nodes in inorder traversal order
             changeStrokeColorWithDelay(() -> {
